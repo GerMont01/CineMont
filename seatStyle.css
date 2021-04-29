@@ -1,0 +1,274 @@
+@media (min-width: 421px) and (max-width: 700px) {
+  .screen {
+    height: 140px !important;
+  }
+  .screen #video {
+    width: 250px !important;
+  }
+  .container .row1 div, .container .row2 div, .container .row3 div {
+    width: 25px !important;
+    height: 30px !important;
+    margin: 3px !important;
+    margin-top: -20px !important;
+  }
+  .container .row1, .container .row3 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    width: 80px !important;
+  }
+  .container .row2 {
+    width: 150px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .screen {
+    height: 95px !important;
+  }
+  .screen #video {
+    width: 170px !important;
+  }
+  .container .row1 div, .container .row2 div, .container .row3 div {
+    width: 18px !important;
+    height: 22px !important;
+    margin: 2px !important;
+    margin-top: -13px !important;
+  }
+  .container .row1, .container .row3 {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+    width: 50px !important;
+  }
+  .container .row2 {
+    width: 100px !important;
+  }
+}
+
+body {
+  background-color: black;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.screen {
+  text-align: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 200px;
+  -webkit-box-shadow: 0 0 20px rgba(255, 255, 255, 0.712);
+          box-shadow: 0 0 20px rgba(255, 255, 255, 0.712);
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+
+.screen #video {
+  width: 360px;
+}
+
+.bodyperspective1 {
+  -webkit-perspective: 150px;
+          perspective: 150px;
+  -webkit-perspective-origin: 40% 20%;
+          perspective-origin: 40% 20%;
+}
+
+.bodyperspective2 {
+  -webkit-perspective: 150px;
+          perspective: 150px;
+  -webkit-perspective-origin: 60% 20%;
+          perspective-origin: 60% 20%;
+}
+
+.screenleft {
+  -webkit-transform: rotateY(1.5deg) !important;
+          transform: rotateY(1.5deg) !important;
+  -webkit-transform-style: preserve-3d !important;
+          transform-style: preserve-3d !important;
+}
+
+.screenright {
+  -webkit-transform: rotateY(-1.5deg) !important;
+          transform: rotateY(-1.5deg) !important;
+  -webkit-transform-style: preserve-3d !important;
+          transform-style: preserve-3d !important;
+}
+
+.perspective1 {
+  -webkit-perspective-origin: 32% 0 !important;
+          perspective-origin: 32% 0 !important;
+}
+
+.perspective2 {
+  -webkit-perspective-origin: 68% 0 !important;
+          perspective-origin: 68% 0 !important;
+}
+
+.container {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-perspective: 70px;
+          perspective: 70px;
+  -webkit-perspective-origin: top center;
+          perspective-origin: top center;
+  -webkit-transition: 1.5s;
+  transition: 1.5s;
+}
+
+.container .row1, .container .row2, .container .row3 {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transform: rotateX(15deg);
+          transform: rotateX(15deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective-origin: top left;
+          perspective-origin: top left;
+}
+
+.container .row1 div, .container .row2 div, .container .row3 div {
+  text-align: center;
+  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.692);
+          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.692);
+  width: 40px;
+  height: 45px;
+  margin: 5px;
+  margin-top: -35px;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, rgba(255, 255, 255, 0.9)), color-stop(98%, black));
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 70%, black 98%);
+  border: transparent;
+  border-radius: 8px;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: rotateX(-15deg);
+          transform: rotateX(-15deg);
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+
+.container .row1 div:hover, .container .row2 div:hover, .container .row3 div:hover {
+  -webkit-transform: scaleY(1.15) rotateX(-17deg);
+          transform: scaleY(1.15) rotateX(-17deg);
+  cursor: pointer;
+}
+
+.container .row1 {
+  width: 100px;
+  padding-left: 25px;
+  justify-self: flex-start;
+  border-left: 1px solid white;
+}
+
+.container .row2 {
+  width: 220px;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  border-left: 1px dashed white;
+  border-right: 1px dashed white;
+}
+
+.container .row3 {
+  width: 100px;
+  padding-right: 25px;
+  justify-self: flex-end;
+  border-right: 1px solid white;
+}
+
+.options {
+  position: relative;
+  top: 100px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.options p {
+  margin: 10px;
+}
+
+.options .red {
+  width: 10px;
+  height: 10px;
+  background-color: #fa3131;
+  border-radius: 50%;
+}
+
+.options .white {
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.options .green {
+  width: 10px;
+  height: 10px;
+  background-color: #57ff2d;
+  border-radius: 50%;
+}
+
+.price {
+  position: relative;
+  top: 120px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.price p {
+  margin: 0;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.selected {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, rgba(87, 255, 45, 0.9)), color-stop(98%, black)) !important;
+  background: linear-gradient(180deg, rgba(87, 255, 45, 0.9) 70%, black 98%) !important;
+}
+
+.occupied {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, rgba(250, 49, 49, 0.9)), color-stop(98%, black)) !important;
+  background: linear-gradient(180deg, rgba(250, 49, 49, 0.9) 70%, black 98%) !important;
+}
+/*# sourceMappingURL=seatStyle.css.map */

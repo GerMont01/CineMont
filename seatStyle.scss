@@ -1,0 +1,206 @@
+@media (min-width:421px) and (max-width: 700px) {
+    .screen {
+        height: 140px !important;
+        #video {
+           width: 250px !important; 
+        }  
+    }
+    .container {
+        .row1, .row2, .row3 {
+            div {
+                width: 25px !important;
+                height: 30px !important;
+                margin: 3px !important;
+                margin-top: -20px !important;
+            }
+        }
+        .row1, .row3 {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            width: 80px !important;
+        }
+        .row2 {
+            width: 150px !important;
+        }
+    }
+}
+
+@media (max-width: 420px) {
+    .screen {
+        height: 95px !important;
+        #video {
+           width: 170px !important; 
+        }  
+    }
+    .container {
+        .row1, .row2, .row3 {
+            div {
+                width: 18px !important;
+                height: 22px !important;
+                margin: 2px !important;
+                margin-top: -13px !important;
+            }
+        }
+        .row1, .row3 {
+            padding-left: 5px !important;
+            padding-right: 5px !important;
+            width: 50px !important;
+        }
+        .row2 {
+            width: 100px !important;
+        }
+    }
+}
+
+body {
+    background-color: black;
+    transition: 1.5s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.screen {
+    // margin: auto;
+    text-align: center;
+    width: fit-content;
+    height: 200px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.712);
+    transition: 1.5s;
+    #video {
+        width: 360px;
+    }
+}
+.bodyperspective1 {
+    perspective: 150px;
+    perspective-origin: 40% 20%;
+}
+.bodyperspective2 {
+    perspective: 150px;
+    perspective-origin: 60% 20%;
+}
+.screenleft {
+    transform: rotateY(1.5deg) !important;
+    transform-style: preserve-3d !important;
+}
+.screenright {
+    transform: rotateY(-1.5deg) !important;
+    transform-style: preserve-3d !important;
+}
+.perspective1 {
+    perspective-origin: 32% 0 !important;
+}
+.perspective2 {
+    perspective-origin: 68% 0 !important;
+}
+.container {
+    width: 70%;
+    // margin: auto;
+    display: flex;
+    justify-content: center;
+    perspective: 70px;
+    perspective-origin: top center;
+    transition: 1.5s;
+    .row1, .row2, .row3 {
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        transform: rotateX(15deg);
+        transform-style: preserve-3d;
+        perspective-origin: top left;
+        div {
+            text-align: center;
+            box-shadow: 0 2px 2px rgba(0, 0, 0, 0.692);
+            width: 40px;
+            height: 45px;
+            margin: 5px;
+            margin-top: -35px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 70%, rgba(0,0,0,1) 98%);
+            border: transparent;
+            border-radius: 8px;
+            transition: 1s;
+            transform: rotateX(-15deg);
+            transform-style: preserve-3d;
+            transform-origin: 0 100%;
+            &:hover {
+                transform: scaleY(1.15) rotateX(-17deg);
+                cursor: pointer;
+            }
+        }   
+    }
+    .row1 {
+        width: 100px;
+        padding-left: 25px;
+        justify-self: flex-start;
+        // border-bottom: 1px solid white;
+        border-left: 1px solid white;
+    }
+    .row2 {
+        width: 220px;
+        justify-self: center;
+        // border-bottom: 1px solid white;
+        border-left: 1px dashed white;
+        border-right: 1px dashed white;
+    }
+    
+    .row3 {
+        width: 100px;
+        padding-right: 25px;
+        justify-self: flex-end;
+        // border-bottom: 1px solid white;
+        border-right: 1px solid white;
+    }
+}
+
+.options {
+    position: relative;
+    top: 100px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+        margin: 10px;
+    }
+    .red {
+        width: 10px;
+        height: 10px;
+        background-color: rgb(250, 49, 49);
+        border-radius: 50%;
+    }
+    .white {
+        width: 10px;
+        height: 10px;
+        background-color: white;
+        border-radius: 50%;
+    }
+    .green {
+        width: 10px;
+        height: 10px;
+        background-color: rgb(87, 255, 45);
+        border-radius: 50%;
+    }
+}
+
+.price {
+    position: relative;
+    top: 120px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    p {
+        margin: 0;
+        margin-right: 20px;
+        text-align: left;
+    }
+}
+
+.selected {
+    background: linear-gradient(180deg, rgba(87, 255, 45, 0.9) 70%, rgba(0,0,0,1) 98%) !important;
+    
+}
+.occupied {
+    background: linear-gradient(180deg, rgba(250, 49, 49, 0.9) 70%, rgba(0,0,0,1) 98%) !important;
+}

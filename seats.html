@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seat Selection</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="seatStyle.css">
+</head>
+<body>
+    <a href="index.html">Return</a>
+    <div class="screen">
+        <video  autoplay muted loop id="video">
+            <source src="Video.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="container">
+        <div class="row1"></div>
+        <div class="row2"></div>
+        <div class="row3"></div>
+    </div>
+    <div class="options">
+        <p>Occupied Seats <div class="red"></div></p>
+        <p>Available Seats <div class="white"></div></p>
+        <p>Selected Seats <div class="green"></div></p>
+    </div>
+    <div class="price">
+        <p>Price:<span class="moviePrice"></span></p>
+        <p># Seats:<span class="numSeats"></span></p>
+        <p>Total: <span class="total"></span></p>
+        <button>Checkout</button>
+    </div>
+    <script src="seatScript.js"></script>
+</body>
+</html>
