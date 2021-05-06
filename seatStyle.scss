@@ -1,8 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
+
+@media (max-width: 600px) {
+    .loader{
+        h1 {
+            font-size: 50px !important;
+            margin-bottom: 50px;
+        }
+    }
+}
 @media (min-width:421px) and (max-width: 700px) {
     .screen {
         height: 140px !important;
+        width: 252px !important; 
         #video {
-           width: 250px !important; 
+            width: 336px !important; 
+            height: 245px !important;
+            top: -52px !important;
+            left: -45px !important;
         }  
     }
     .container {
@@ -28,8 +42,12 @@
 @media (max-width: 420px) {
     .screen {
         height: 95px !important;
+        width: 171px !important; 
         #video {
-           width: 170px !important; 
+            height: 200px !important;
+            width: 250px !important; 
+            top: -50px !important;
+            left: -45px !important;
         }  
     }
     .container {
@@ -59,15 +77,115 @@ body {
     flex-direction: column;
     align-items: center;
 }
+
+.loader {
+    position: absolute;
+    top: -10px;
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    z-index: 10; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // justify-content: center;
+    transition-duration: 2s;
+    transition-delay: 1s;
+    h1 {
+        position: relative;
+        top: 100px;
+        color: white;
+        font-size: 100px;
+        font-family: 'Eagle Lake', cursive;
+        margin-right: 4vw;
+        span {
+            color: red;
+        }
+    }
+    .camara {
+        position: relative;
+        top: 15vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        #ic1 {
+            height: 60px;
+            width: 70px;
+            box-shadow: none;
+            &:hover {
+                transform: scale(1);
+                cursor: unset;
+            }
+        }
+        #ic2 {
+            position: absolute;
+            top: -10px;
+            left: 2px;
+            height: 25px;
+            width: 25px;
+            box-shadow: none;
+            animation: spin-animation 0.5s infinite;
+            &:hover {
+                transform: scale(1);
+                cursor: unset;
+            }
+        }
+        #ic3 {
+            position: absolute;
+            top: -10px;
+            right: 18px;
+            height: 25px;
+            width: 25px;
+            box-shadow: none;
+            animation: spin-animation 0.5s infinite;
+            &:hover {
+                transform: scale(1);
+                cursor: unset;
+            }
+        }
+        @keyframes spin-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(359deg);
+            }
+        }
+    }
+}
+a {
+    position: absolute;
+    top: 10px;
+    left: -5px;
+    perspective: 50px;
+    perspective-origin: top;
+    z-index: 10;
+    img {
+        transform: rotateY(50deg) rotateZ(-15deg);
+        transform-style: preserve-3d;
+        width: 35px;
+        height: 50px;
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.1) rotateY(50deg) rotateZ(-15deg);
+        }
+    }
+}
 .screen {
-    // margin: auto;
+    margin-top: 20px;
+    overflow:hidden;
     text-align: center;
     width: fit-content;
     height: 200px;
+    width: 360px;
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.712);
     transition: 1.5s;
     #video {
-        width: 360px;
+        position: relative;
+        top:-75px;
+        left: -60px;
+        width: 480px;
+        height: 350px;
     }
 }
 .bodyperspective1 {

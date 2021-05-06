@@ -8,13 +8,17 @@
     <link rel="stylesheet" href="seatStyle.css">
 </head>
 <body>
-    <a href="index.html">Return</a>
-    <div class="screen">
-        <video  autoplay muted loop id="video">
-            <source src="Video.mp4" type="video/mp4">
-        </video>
+    <div class="loader">
+        <h1>Cine<span>M</span>ont</h1>
+        <div class="camara">
+            <img id="ic1" src="./camara1.svg">
+            <img id="ic2" src="./camara2.svg">
+            <img id="ic3" src="./camara2.svg">
+        </div>
     </div>
+    <div class="screen"></div>
     <div class="container">
+        <a href="home.html"><img src="./exit.svg"></a>
         <div class="row1"></div>
         <div class="row2"></div>
         <div class="row3"></div>
@@ -28,7 +32,7 @@
         <p>Price:<span class="moviePrice"></span></p>
         <p># Seats:<span class="numSeats"></span></p>
         <p>Total: <span class="total"></span></p>
-        <button>Checkout</button>
+        <button id="checkout">Checkout</button>
     </div>
     <script src="seatScript.js"></script>
 </body>
