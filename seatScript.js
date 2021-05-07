@@ -1,5 +1,7 @@
 
 let room;
+
+// Classes ----------------------------------------------------------
 class Movie {
     constructor(id) {
         this.id = id,
@@ -18,6 +20,8 @@ class Seat {
         this.status = 'available'
     }
 }
+
+// Generate Letter for Seats -------------------------------------------------------------
 function getLetter(calc) {
     switch(calc) {
         case 0:
@@ -44,6 +48,8 @@ function getLetter(calc) {
             return 'Z';
     }
 }
+
+// Generate seats ----------------------------------------------------------------------------------------------
 function generateSeats(id) {
     console.log('hi');
     console.log(room.seats);
@@ -67,11 +73,9 @@ function generateSeats(id) {
     // console.log(room.seats); 
 }
 
-// let arr = [1,2,'paco'];
-// localStorage.setItem('hola',arr);
-// let hola = localStorage.getItem('hola').split(',');
-// console.log(hola[2]);
 let movieroom = '';
+
+// On load ---------------------------------------------------------------------------------------------
 $(window).on('load', function(){
     $('.loader').css("transform","translateY(-100vh)");
     let screen = `<iframe id="video" src="${localStorage.getItem('trailer')+'?autoplay=1&volume=0&vol=0&mute=1&controls=0&showinfo=0&autohide=1'}" frameborder="0"></iframe>`;
@@ -100,6 +104,8 @@ $(window).on('load', function(){
     
 });
 let x = 0;
+
+// Select seat ----------------------------------------------
 function selectSeat(id) {
     if ($(`#${id}`).attr('class') == 'occupied') {}
     else {
@@ -116,6 +122,7 @@ function selectSeat(id) {
     }
 }
 
+// Checkout button ------------------------------------------------------------------------
 $('#checkout').on('click', function() {
     for (let seat of room.seats){
         if ($(`#${seat.id}`).attr('class') == 'selected') {
@@ -129,12 +136,14 @@ $('.moviePrice').text(' $' + 20);
 $('.numSeats').text(0);
 $('.total').text(' $' + 0);
 
+// Get Price -----------------------------------------------------
 function getPrice(state) {
     state == 'add' ? x++ : x--; 
     $('.numSeats').text(' ' + x);
     $('.total').text(' $' + (x*20));
 }
 
+// Seat perspective animations -----------------------------------------------------------------------
 $('.row1').on('mouseenter', function(){
     $('.container').addClass('perspective1');
     $('.screen').addClass('screenleft');

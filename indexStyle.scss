@@ -1,12 +1,44 @@
 @import url('https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@media (max-height: 360px) {
+    .menu {
+        nav {
+            top: 0 !important;
+        }
+    }
+}
 
 @media (max-width: 600px) {
     .menu{
         h1 {
             font-size: 50px !important;
             margin-bottom: 50px;
+        }
+    }
+    .exit {
+        left:auto !important;
+        right: 40px !important;
+    }
+    .login {
+        flex-direction: column !important;
+        .div1, .div2 {
+            width: 100% !important;
+            // height: 50% !important;
+            div {
+                margin-top: 40px !important;
+            }
+        }
+    }
+    .info {
+        flex-direction: column;
+        h1 {
+            position: relative !important;
+            margin-top: 250px !important;
+        }
+        .dt, .kit {
+            width: 80% !important;
+            margin-top:10px !important;
         }
     }
 }
@@ -18,6 +50,18 @@ body {
     background-color: black;
 }
 
+.exit {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    img {
+        height: 30px;
+    }
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
 .menu {
     height: 100vh;
     width: 100%;
@@ -25,42 +69,102 @@ body {
     flex-direction: column;
     align-items: center;
     // justify-content: center;
-    transition-duration: 2s;
-    transition-delay: 1s;
     font-family: 'Eagle Lake', cursive;
     h1 {
         position: relative;
-        top: 100px;
+        top: 20vh;
         color: white;
         font-size: 100px;
-        margin-right: 4vw;
+        margin-right: 3.5vw;
+        margin-top: 10px;
+        margin-bottom: 10px;
         span {
-            color: red;
+            color: rgb(228, 28, 2);
         }
     }
-    a:nth-child(2) {
-        color: red;
-        border-color: red;
-        font-size: 16px;
-    }
-    a {
-        font-weight:100;
+    nav {
         position: relative;
-        top: 50px;
-        text-decoration: none;
-        font-size: 12px;
-        margin: 5px;
-        padding: 0.5vw;
-        background-color: black;
-        border: 1px solid white;
-        border-radius: 20px;
-        color: white;
-        transition: 0.1s;
-        &:hover {
-            cursor: pointer;
-            transform: scale(1.1);
-            color: red;
-            border-color: red;
+        top: 10vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition-duration: 3s;
+        transition-delay: 0.5s;
+        opacity: 0;
+        a:nth-child(1) {
+            color: rgb(235, 28, 1);;
+            border-color: rgb(228, 28, 2);;
+            font-size: 16px;
+        }
+        a {
+            font-weight:100;
+            text-decoration: none;
+            font-size: 12px;
+            margin: 5px;
+            padding: 0.5vw;
+            background-color: black;
+            border: 1px solid white;
+            border-radius: 20px;
+            color: white;
+            transition: 0.1s;
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+                color: rgb(228, 28, 2);;
+                border-color: rgb(228, 28, 2);;
+            }
+        }
+    }
+    .camara1 {
+        position: relative;
+        top: 25vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 1vw;
+        transition: 2s;
+        #ic1 {
+            height: 60px;
+            width: 70px;
+            box-shadow: none;
+            &:hover {
+                transform: scale(1);
+                cursor: unset;
+            }
+        }
+        #ic2 {
+            position: absolute;
+            top: -11px;
+            left: 2px;
+            height: 25px;
+            width: 25px;
+            box-shadow: none;
+            animation: spin-animation 0.5s infinite;
+            &:hover {
+                transform: scale(1);
+                cursor: unset;
+            }
+        }
+        #ic3 {
+            position: absolute;
+            top: -11px;
+            right: 18px;
+            height: 25px;
+            width: 25px;
+            box-shadow: none;
+            animation: spin-animation 0.5s infinite;
+            &:hover {
+                transform: scale(1);
+                cursor: unset;
+            }
+        }
+        @keyframes spin-animation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(359deg);
+            }
         }
     }
 }
@@ -69,27 +173,17 @@ body {
     position: absolute;
     top: 0;
     height: 100%;
-    height: 100%;
     width: 100%;
     color: white;
     display: flex;
     justify-content: center;
     align-content: center;
     font-family: 'Eagle Lake', cursive;
-    a {
-        position: absolute;
-        top: 40px;
-        left: 40px;
-        img {
-            height: 30px;
-        }
-        
-    }
     h1 {
         position: absolute;
         margin-top: 80px;
         span {
-            color: red;
+            color: rgb(228, 28, 2);;
         }
     }
     .dt, .kit {
@@ -99,7 +193,7 @@ body {
         margin:20px;
         margin-top:180px;
         width: 20%;
-        height: 60%;
+        height: fit-content;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -108,6 +202,9 @@ body {
             width: fit-content;
             margin: 0;
             padding: 5px;
+            span {
+                color: rgb(228, 28, 2);
+            }
         }
         div {
             width: fit-content;
@@ -119,13 +216,128 @@ body {
                 font-family: 'Roboto', sans-serif;
             } 
         }
+        p {
+            font-size: 14px;
+            margin: 5px;
+            text-align: center;
+        }
         iframe {
             border-radius: 20px;
             border: transparent;
             margin: 0;
-            margin-top: 25px;
-            height: 60%;
             width: 75%;
+            height: 32vh;
+            padding: 15px;
+        }
+    }
+}
+
+.login {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: 'Eagle Lake', cursive;
+    .div1 {
+        width: 50%;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        div {
+            width: fit-content;
+            font-size: 14px;
+            h1 {
+                width: 100%;
+                font-size: 40px;
+                margin-top: 0;
+                span {
+                    color: rgb(228, 28, 2);;
+                }
+            }
+            p {
+                width: 100%;
+            }
+            form {
+                width: 100%;
+                #e-mail, #password {
+                    margin: 10px 0 10px 0;
+                    height: 30px;
+                    width: 300px;
+                    font-family: 'Eagle Lake', cursive;
+                    border: transparent;
+                    border-radius: 5px;
+                }
+                button {
+                    margin: 10px 0 10px 0;
+                    height: 40px;
+                    width: 100%;
+                    font-size: 14px;
+                    font-family: 'Eagle Lake', cursive;
+                    border: transparent;
+                    border-radius: 5px;
+                    background-color: rgb(228, 28, 2);;
+                    color: white;
+                    transition: 0.2s;
+                    &:hover {
+                        transform: scale(1.05);
+                        cursor: pointer;
+                    }
+                }
+            }
+            a {
+                width: 100%;
+                color: rgba(255, 255, 255, 0.534);
+                &:hover {
+                    color: white;
+                }
+            }
+        }
+        
+    }
+    .div2 {
+        position: relative;
+        width: 50%;
+        height: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.411);
+        }
+        button {
+            z-index: 1;
+            width: 45%;
+            border: solid 0.5px rgba(255, 255, 255, 0.678);
+            background-color: transparent;
+            border-radius: 4px;
+            padding: 14px;
+            margin: 10px;
+            color: white;
+            text-align: left;
+            font-size: 18px;
+            font-family: 'Eagle Lake', cursive;
+            transition: 0.2s;
+            i {
+                margin-right: 20px;
+            }
+            &:hover {
+                transform: scale(1.03);
+                color: rgb(228, 28, 2);;
+                border-color: rgb(228, 28, 2);;
+                cursor: pointer;
+            }
         }
     }
 }

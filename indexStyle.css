@@ -1,9 +1,45 @@
 @import url("https://fonts.googleapis.com/css2?family=Eagle+Lake&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@media (max-height: 360px) {
+  .menu nav {
+    top: 0 !important;
+  }
+}
+
 @media (max-width: 600px) {
   .menu h1 {
     font-size: 50px !important;
     margin-bottom: 50px;
+  }
+  .exit {
+    left: auto !important;
+    right: 40px !important;
+  }
+  .login {
+    -webkit-box-orient: vertical !important;
+    -webkit-box-direction: normal !important;
+        -ms-flex-direction: column !important;
+            flex-direction: column !important;
+  }
+  .login .div1, .login .div2 {
+    width: 100% !important;
+  }
+  .login .div1 div, .login .div2 div {
+    margin-top: 40px !important;
+  }
+  .info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .info h1 {
+    position: relative !important;
+    margin-top: 250px !important;
+  }
+  .info .dt, .info .kit {
+    width: 80% !important;
+    margin-top: 10px !important;
   }
 }
 
@@ -12,6 +48,21 @@ body {
   height: 100vh;
   width: 100%;
   background-color: black;
+}
+
+.exit {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.exit img {
+  height: 30px;
+}
+
+.exit:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .menu {
@@ -27,35 +78,51 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition-duration: 2s;
-          transition-duration: 2s;
-  -webkit-transition-delay: 1s;
-          transition-delay: 1s;
   font-family: 'Eagle Lake', cursive;
 }
 
 .menu h1 {
   position: relative;
-  top: 100px;
+  top: 20vh;
   color: white;
   font-size: 100px;
-  margin-right: 4vw;
+  margin-right: 3.5vw;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .menu h1 span {
-  color: red;
+  color: #e41c02;
 }
 
-.menu a:nth-child(2) {
-  color: red;
-  border-color: red;
+.menu nav {
+  position: relative;
+  top: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition-duration: 3s;
+          transition-duration: 3s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+  opacity: 0;
+}
+
+.menu nav a:nth-child(1) {
+  color: #eb1c01;
+  border-color: #e41c02;
   font-size: 16px;
 }
 
-.menu a {
+.menu nav a {
   font-weight: 100;
-  position: relative;
-  top: 50px;
   text-decoration: none;
   font-size: 12px;
   margin: 5px;
@@ -68,18 +135,106 @@ body {
   transition: 0.1s;
 }
 
-.menu a:hover {
+.menu nav a:hover {
   cursor: pointer;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  color: red;
-  border-color: red;
+  color: #e41c02;
+  border-color: #e41c02;
+}
+
+.menu .camara1 {
+  position: relative;
+  top: 25vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-left: 1vw;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.menu .camara1 #ic1 {
+  height: 60px;
+  width: 70px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.menu .camara1 #ic1:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  cursor: unset;
+}
+
+.menu .camara1 #ic2 {
+  position: absolute;
+  top: -11px;
+  left: 2px;
+  height: 25px;
+  width: 25px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-animation: spin-animation 0.5s infinite;
+          animation: spin-animation 0.5s infinite;
+}
+
+.menu .camara1 #ic2:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  cursor: unset;
+}
+
+.menu .camara1 #ic3 {
+  position: absolute;
+  top: -11px;
+  right: 18px;
+  height: 25px;
+  width: 25px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-animation: spin-animation 0.5s infinite;
+          animation: spin-animation 0.5s infinite;
+}
+
+.menu .camara1 #ic3:hover {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  cursor: unset;
+}
+
+@-webkit-keyframes spin-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
+}
+
+@keyframes spin-animation {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(359deg);
+            transform: rotate(359deg);
+  }
 }
 
 .info {
   position: absolute;
   top: 0;
-  height: 100%;
   height: 100%;
   width: 100%;
   color: white;
@@ -94,23 +249,13 @@ body {
   font-family: 'Eagle Lake', cursive;
 }
 
-.info a {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-}
-
-.info a img {
-  height: 30px;
-}
-
 .info h1 {
   position: absolute;
   margin-top: 80px;
 }
 
 .info h1 span {
-  color: red;
+  color: #e41c02;
 }
 
 .info .dt, .info .kit {
@@ -121,7 +266,9 @@ body {
   margin: 20px;
   margin-top: 180px;
   width: 20%;
-  height: 60%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -145,6 +292,10 @@ body {
   padding: 5px;
 }
 
+.info .dt h2 span, .info .kit h2 span {
+  color: #e41c02;
+}
+
 .info .dt div, .info .kit div {
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -159,12 +310,172 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.info .dt p, .info .kit p {
+  font-size: 14px;
+  margin: 5px;
+  text-align: center;
+}
+
 .info .dt iframe, .info .kit iframe {
   border-radius: 20px;
   border: transparent;
   margin: 0;
-  margin-top: 25px;
-  height: 60%;
   width: 75%;
+  height: 32vh;
+  padding: 15px;
+}
+
+.login {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  font-family: 'Eagle Lake', cursive;
+}
+
+.login .div1 {
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login .div1 div {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 14px;
+}
+
+.login .div1 div h1 {
+  width: 100%;
+  font-size: 40px;
+  margin-top: 0;
+}
+
+.login .div1 div h1 span {
+  color: #e41c02;
+}
+
+.login .div1 div p {
+  width: 100%;
+}
+
+.login .div1 div form {
+  width: 100%;
+}
+
+.login .div1 div form #e-mail, .login .div1 div form #password {
+  margin: 10px 0 10px 0;
+  height: 30px;
+  width: 300px;
+  font-family: 'Eagle Lake', cursive;
+  border: transparent;
+  border-radius: 5px;
+}
+
+.login .div1 div form button {
+  margin: 10px 0 10px 0;
+  height: 40px;
+  width: 100%;
+  font-size: 14px;
+  font-family: 'Eagle Lake', cursive;
+  border: transparent;
+  border-radius: 5px;
+  background-color: #e41c02;
+  color: white;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.login .div1 div form button:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  cursor: pointer;
+}
+
+.login .div1 div a {
+  width: 100%;
+  color: rgba(255, 255, 255, 0.534);
+}
+
+.login .div1 div a:hover {
+  color: white;
+}
+
+.login .div2 {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.login .div2 div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.411);
+}
+
+.login .div2 button {
+  z-index: 1;
+  width: 45%;
+  border: solid 0.5px rgba(255, 255, 255, 0.678);
+  background-color: transparent;
+  border-radius: 4px;
+  padding: 14px;
+  margin: 10px;
+  color: white;
+  text-align: left;
+  font-size: 18px;
+  font-family: 'Eagle Lake', cursive;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.login .div2 button i {
+  margin-right: 20px;
+}
+
+.login .div2 button:hover {
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
+  color: #e41c02;
+  border-color: #e41c02;
+  cursor: pointer;
 }
 /*# sourceMappingURL=indexStyle.css.map */

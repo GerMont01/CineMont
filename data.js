@@ -1,7 +1,10 @@
+// API key and URLS ------------------------------------------------------
 const api_key = 'c90096fb1d3ef652886f7ca5bb8516c3';
 const url = 'https://api.themoviedb.org/3/trending/movie/week?api_key=';
 const url2 = 'https://api.themoviedb.org/3/movie/460465/videos?api_key=c90096fb1d3ef652886f7ca5bb8516c3&language=en-US'
 const posterUrl = 'https://www.themoviedb.org/t/p/w600_and_h900_face';
+
+// Fetch movies --------------------------------------------------------------------------
 async function fetchMoviesJSON() {
     try {
         const response = await fetch(`${url}${api_key}`);
@@ -12,6 +15,8 @@ async function fetchMoviesJSON() {
         console.log(`We have some error ${err}`);
     }
 }
+
+// Fetch movie trailer by ID -----------------------------------------------------------------------
 async function fetchTrailer(movieId) {
     try {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${api_key}&language=en-US`);
@@ -22,6 +27,8 @@ async function fetchTrailer(movieId) {
         console.log(`We have some error ${err}`);
     }
 }
+
+// Fetch movie info by id -----------------------------------------------------------------------
 async function fetchMovie(movieID) {
     try {
         const response = await fetch(`https://api.themoviedb.org/3/movie/${movieID}?api_key=${api_key}&language=en-US`)

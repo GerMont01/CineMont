@@ -11,27 +11,64 @@
 <body>
     <div class="menu">
         <h1>Cine<span>M</span>ont</h1> 
-        <a class="enter" href="home.html">Enter the Cinema</a>
-        <a class="about">About</a>
-        <a class="logIn">Log In</a>
+        <div class="camara1">
+            <img id="ic1" src="./camara1.svg">
+            <img id="ic2" src="./camara2.svg">
+            <img id="ic3" src="./camara2.svg">
+        </div>
+        <nav>
+            <a class="enter" href="home.html">Enter the Cinema</a>
+            <a class="about">About</a>
+            <a class="logIn">Log In</a>
+        </nav>   
     </div>
     <div class="info">
-        <a href="index.html"><img src="./exit.svg"></a>
+        <a class="exit" href="index.html"><img src="./exit.svg"></a>
         <h1>Our <span>L</span>ocations</h1> 
         <div class="dt">
-            <h2>Downtown</h2>
+            <h2><span>D</span>owntown</h2>
             <div>
                 <p>VIP</p><p>3D</p><p>4D</p><p>IMAX</p>  
             </div>
+            <p>Hours: 10:00am - 11:00pm</p>
+            <p>Tel. (555) 555-5555</p>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8754.54205733015!2d-123.12486042377405!3d49.281306133178184!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5486717fb6b39997%3A0x76ae673edebc6904!2s816%20Granville%20St%2C%20Vancouver%2C%20BC%20V6Z%201K3!5e0!3m2!1ses!2sca!4v1620248733527!5m2!1ses!2sca" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="kit">
-            <h2>Kitsilano</h2>
+            <h2><span>K</span>itsilano</h2>
             <div>
                 <p>VIP</p><p>3D</p><p>4D</p><p>IMAX</p>  
             </div>
+            <p>Hours: 10:00am - 11:00pm</p>
+            <p>Tel. (999) 999-9999</p>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29455.380837749846!2d-123.17990465807537!3d49.266686455729435!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x548673ac4e660e21%3A0xb5b333db22122d3a!2s2733w%20W%20Broadway%2C%20Vancouver%2C%20BC%20V6K%202G5!5e0!3m2!1ses!2sca!4v1620255974350!5m2!1ses!2sca" allowfullscreen="" loading="lazy"></iframe>
         </div>
     </div>
+    <div class="login">
+        <a class="exit" href="index.html"><img src="./exit.svg"></a>
+        <div class="div1">
+            <div>
+                <h1>Log <span>I</span>n</h1>
+                <p>Please enter your e-mail and password</p>
+                <form>
+                    <label for="e-mail">E-Mail</label><br>
+                    <input id="e-mail" type="text" placeholder="e-mail@example.com"><br>
+                    <label for="password">Password</label><br>
+                    <input id="password" type="password" placeholder="Enter password"><br>
+                    <input type="checkbox" id="checkbox">
+                    <label for="checkbox">Keep me Logged In</label><br>
+                    <button>Log In</button>
+                </form>
+                <a href="#">Don't have an account? Sign Up</a>
+            </div>
+        </div>
+        <div class="div2">
+            <div></div>
+            <button><i class="fab fa-facebook-f"></i> Facebook</button>
+            <button><i class="fab fa-twitter"></i> Twitter</button>
+            <button><i class="fab fa-google"></i> Google</button>
+        </div>
+    </div>
+    <script src="data.js"></script>
     <script src="script.js"></script>
 </body>

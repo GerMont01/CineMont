@@ -1,29 +1,37 @@
-$(window).on('load', function(){
-    $('.loader').css("transform","translateY(-100vh)");
-});
 
+
+let bg;
 let listings = [];
 let i = 0;
+
+// Movie Posters -----------------------------------------------------
 async function getMovies() {
     let movies = await fetchMoviesJSON();
     console.log(movies.results[0].poster_path);
+    bg = posterUrl+movies.results[0].poster_path;
+    $('.div2').css({'background-image':`url(${bg})`,'background-size':'cover'});
+    console.log(bg);
     for (i; i<8;i=i+2){
-        $('.container1').append(`<img onclick='openInfo(this.id)' id='poster${i}' src='${poster=posterUrl+movies.results[i].poster_path}'>`);
-        $('.container2').append(`<img onclick='openInfo(this.id)' id='poster${i+1}' src='${poster=posterUrl+movies.results[i+1].poster_path}'>`);
+        
+        $('.container1').append(`<img onclick='openInfo(this.id)' id='poster${i}' src='${posterUrl+movies.results[i].poster_path}'>`);
+        $('.container2').append(`<img onclick='openInfo(this.id)' id='poster${i+1}' src='${posterUrl+movies.results[i+1].poster_path}'>`);
     };
+
+    // Change movie by arrow click ---------------------------------------------------------------
     $('.arrow').on('click', function() {
         $('.container1').empty();
         $('.container2').empty();
         let amount = movies.results.length;
         let j = (i-6)%amount;
         for (i = j; i<j+8;i=i+2){
-            $('.container1').append(`<img onclick='openInfo(this.id)' id='poster${i%amount}' src='${poster=posterUrl+movies.results[i%amount].poster_path}'>`);
-            $('.container2').append(`<img onclick='openInfo(this.id)' id='poster${(i+1)%amount}' src='${poster=posterUrl+movies.results[(i+1)%amount].poster_path}'>`);
+            $('.container1').append(`<img onclick='openInfo(this.id)' id='poster${i%amount}' src='${posterUrl+movies.results[i%amount].poster_path}'>`);
+            $('.container2').append(`<img onclick='openInfo(this.id)' id='poster${(i+1)%amount}' src='${posterUrl+movies.results[(i+1)%amount].poster_path}'>`);
         }
     });
 }
 getMovies();
 
+// Movie Information -------------------------------------------
 $('.movieInfo').hide();
 async function openInfo(id) {
     let i = id.replace( /^\D+/g, '');
@@ -55,7 +63,7 @@ async function openInfo(id) {
         <p class="p3">${synopsis}</p>
         <h2 class="h2b">Genres</h2>
         <ul>${genres}</ul>
-        <h2 class="h2c">Avaiable Dates</h2>
+        <h2 class="h2c">Available Hours</h2>
         <div class="p4"><button>9:30am</button><button>11:30am</button><button>1:00pm</button><button>5:30pm</button></div>
         <button id="buyBtn${i}" class="buyBtn" onclick="buySeats(this.id)">Buy Tickets</button>
         <i onclick='closeInfo()' class="fas fa-times"></i>
@@ -69,6 +77,7 @@ async function openInfo(id) {
     $('.movieInfo').show();
 }
 
+// Buy button ---------------------------------------------------
 function buySeats(id) {
     for (let i = 0;i<20;i++) {
         localStorage.setItem(`movie${i}`,'inactive')
@@ -78,6 +87,7 @@ function buySeats(id) {
     window.open('seats.html', "_self");
 }
 
+// Close Information -------------------------------------------------------------
 function closeInfo() {
     console.log('hi');
     $('.movieInfo').hide();
@@ -87,6 +97,7 @@ function closeInfo() {
     $('a').css({'filter':'blur(0)','opacity':'1','z-index':'0'});
 };
 
+// Change movie by scroll --------------------------------------------------------
 $('body').bind('mousewheel', function(e){
     if(e.originalEvent.wheelDelta /120 > 0) {
         $('.arrow').trigger('click');
@@ -94,8 +105,25 @@ $('body').bind('mousewheel', function(e){
 });
 
 
+// Main menu ---------------------------------------------------------------------
+$(window).on('load', function(){
+    $('.loader').css("transform","translateY(-100vh)");
+    $('.camara1').css("opacity","0");
+    $('nav').css("opacity","1");
+});
+
 $('.info').hide();
+
+// About ----------------------------------------------------------------
 $('.about').on('click',function(){
     $('.info').show();
+    $('.menu').hide();
+});
+
+$('.login').hide();
+
+//  Log in ---------------------------------------------------------------------
+$('.logIn').on('click',function(){
+    $('.login').show();
     $('.menu').hide();
 });
