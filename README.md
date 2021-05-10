@@ -34,4 +34,4 @@ To archive this I created two classes, Movie and Seats. When we open the seat se
 ![image](https://user-images.githubusercontent.com/77022076/117728607-8341aa80-b19e-11eb-888a-1c3f1494a1b0.png)
 ![image](https://user-images.githubusercontent.com/77022076/117728735-ac623b00-b19e-11eb-9aa8-86cc8c91df6a.png)
 
-Visit 
+Visit https://germont01.github.io/CineMont/ to take a look at my fictional cinema "CineMont"!
