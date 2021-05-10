@@ -245,13 +245,12 @@ a {
 
 
 img {
-    // transform: rotateY(0deg); 
     transform: translateZ(0);
     margin: 6px;
     width: 30px;
     height: 260px;
     box-shadow: 0 0 1px rgba(255, 255, 255, 0.712);
-    image-rendering: -webkit-optimize-contrast ;
+    image-rendering: -webkit-optimize-contrast;
     image-rendering: optimizeQuality;
     transition: 0.1s;
     &:hover {

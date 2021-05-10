@@ -86,7 +86,6 @@ $(window).on('load', function(){
             let getRoom = JSON.parse(localStorage.getItem(movieroom));
             room = new Movie(movieroom);
             generateSeats(movieroom);
-            // localStorage.setItem(id, JSON.stringify(room.seats));
             for (let seat of getRoom) {
                 if (seat.status == 'occupied') {
                     $(`#${seat.id}`).addClass('occupied');

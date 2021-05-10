@@ -319,8 +319,6 @@ a img:hover {
           transform: rotateX(15deg);
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
-  -webkit-perspective-origin: top left;
-          perspective-origin: top left;
 }
 
 .container .row1 div, .container .row2 div, .container .row3 div {

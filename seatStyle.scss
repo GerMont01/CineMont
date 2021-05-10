@@ -213,7 +213,6 @@ a {
 }
 .container {
     width: 70%;
-    // margin: auto;
     display: flex;
     justify-content: center;
     perspective: 70px;
@@ -227,7 +226,6 @@ a {
         align-items: center;
         transform: rotateX(15deg);
         transform-style: preserve-3d;
-        perspective-origin: top left;
         div {
             text-align: center;
             box-shadow: 0 2px 2px rgba(0, 0, 0, 0.692);
