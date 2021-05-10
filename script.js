@@ -13,8 +13,8 @@ async function getMovies() {
     console.log(bg);
     for (i; i<8;i=i+2){
         
-        $('.container1').append(`<img onclick='openInfo(this.id)' id='poster${i}' src='${posterUrl+movies.results[i].poster_path}'>`);
-        $('.container2').append(`<img onclick='openInfo(this.id)' id='poster${i+1}' src='${posterUrl+movies.results[i+1].poster_path}'>`);
+        $('.container1').append(`<img alt="img" onclick='openInfo(this.id)' id='poster${i}' src='${posterUrl+movies.results[i].poster_path}'>`);
+        $('.container2').append(`<img alt="img" onclick='openInfo(this.id)' id='poster${i+1}' src='${posterUrl+movies.results[i+1].poster_path}'>`);
     };
 
     // Change movie by arrow click ---------------------------------------------------------------
@@ -24,8 +24,8 @@ async function getMovies() {
         let amount = movies.results.length;
         let j = (i-6)%amount;
         for (i = j; i<j+8;i=i+2){
-            $('.container1').append(`<img onclick='openInfo(this.id)' id='poster${i%amount}' src='${posterUrl+movies.results[i%amount].poster_path}'>`);
-            $('.container2').append(`<img onclick='openInfo(this.id)' id='poster${(i+1)%amount}' src='${posterUrl+movies.results[(i+1)%amount].poster_path}'>`);
+            $('.container1').append(`<img alt="img" onclick='openInfo(this.id)' id='poster${i%amount}' src='${posterUrl+movies.results[i%amount].poster_path}'>`);
+            $('.container2').append(`<img alt="img" onclick='openInfo(this.id)' id='poster${(i+1)%amount}' src='${posterUrl+movies.results[(i+1)%amount].poster_path}'>`);
         }
     });
 }
